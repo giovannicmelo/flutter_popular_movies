@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
+import '../../../configs/strings.dart';
 import '../../../data/enums/status.dart';
 import '../../../di/service_locators.dart';
 import '../../../ui/viewmodels/movies_view_model.dart';
-import '../../../configs/strings.dart';
 import '../../../ui/views/components/movie_list_tile.dart';
 
 class MoviesListScreen extends StatefulWidget {
@@ -17,8 +17,8 @@ class _MoviesListScreenState extends State<MoviesListScreen>
     with SingleTickerProviderStateMixin {
   final MoviesViewModel _viewModel = serviceLocator<MoviesViewModel>();
 
-  ScrollController _scrollController;
-  AnimationController _animationController;
+  late ScrollController _scrollController;
+  late AnimationController _animationController;
 
   @override
   void initState() {

@@ -9,7 +9,7 @@ class Genre {
   @JsonKey(name: 'name')
   String name;
 
-  Genre({this.id, this.name});
+  Genre({required this.id, required this.name});
 
   factory Genre.fromJson(Map<String, dynamic> json) => _$GenreFromJson(json);
 
@@ -21,7 +21,7 @@ class GenresList {
   @JsonKey(name: 'genres')
   List<Genre> genres;
 
-  GenresList({this.genres});
+  GenresList({required this.genres});
 
   factory GenresList.fromJson(Map<String, dynamic> json) =>
       _$GenresListFromJson(json);

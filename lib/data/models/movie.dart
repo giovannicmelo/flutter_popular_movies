@@ -36,21 +36,21 @@ class Movie {
   List<Genre> genres;
 
   Movie({
-    this.popularity,
-    this.voteCount,
-    this.video,
-    this.posterPath,
-    this.id,
-    this.adult,
-    this.backdropPath,
-    this.originalLanguage,
-    this.originalTitle,
-    this.genreIds,
-    this.title,
-    this.voteAverage,
-    this.overview,
-    this.releaseDate,
-    this.genres,
+    this.popularity = 0.0,
+    this.voteCount = 0,
+    this.video = false,
+    this.posterPath = "",
+    this.id = 0,
+    this.adult = false,
+    this.backdropPath = "",
+    this.originalLanguage = "",
+    this.originalTitle = "",
+    this.genreIds = const [],
+    this.title = "",
+    this.voteAverage = 0.0,
+    this.overview = "",
+    this.releaseDate = "",
+    this.genres = const [],
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);

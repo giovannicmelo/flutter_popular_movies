@@ -7,8 +7,8 @@ class MovieDetailsBackdrop extends StatelessWidget {
   final double height;
 
   const MovieDetailsBackdrop({
-    @required this.child,
-    @required this.height,
+    required this.child,
+    required this.height,
   });
 
   @override

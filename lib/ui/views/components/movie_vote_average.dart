@@ -4,9 +4,9 @@ import '../../../configs/strings.dart';
 
 class MovieVoteAverage extends StatelessWidget {
   final double average;
-  final Color color;
+  final Color? color;
 
-  const MovieVoteAverage({@required this.average, this.color});
+  const MovieVoteAverage({required this.average, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +23,14 @@ class MovieVoteAverage extends StatelessWidget {
           children: [
             Text(
               Strings.score,
-              style: Theme.of(context).textTheme.bodyText1.copyWith(
+              style: Theme.of(context).textTheme.bodyText1!.copyWith(
                     color: color != null ? Colors.white : Colors.black,
                     fontSize: 14,
                   ),
             ),
             Text(
               average.toString(),
-              style: Theme.of(context).textTheme.headline6.copyWith(
+              style: Theme.of(context).textTheme.headline6!.copyWith(
                     color: color != null ? Colors.white : Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w800,

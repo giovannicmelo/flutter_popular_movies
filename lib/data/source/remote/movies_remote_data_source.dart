@@ -1,18 +1,17 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_popular_movies/data/models/movie.dart';
 
 import '../../../data/contracts/movies_data_source.dart';
+import '../../../data/models/popular.dart';
 import '../../../data/source/network/api_service.dart';
 import '../../../data/source/network/response_holder.dart';
-import '../../../data/models/popular.dart';
 
 class MoviesRemoteDataSource implements MoviesDataSource {
   final ApiService apiService;
 
-  const MoviesRemoteDataSource({@required this.apiService});
+  const MoviesRemoteDataSource({required this.apiService});
 
   @override
-  Future<ResponseHolder<Popular>> getPopularMovies({int page}) async {
+  Future<ResponseHolder<Popular>> getPopularMovies({int page = 0}) async {
     try {
       final response = await apiService.getPopularMovies(page: page);
 
@@ -38,7 +37,7 @@ class MoviesRemoteDataSource implements MoviesDataSource {
   }
 
   @override
-  Future<ResponseHolder<Movie>> getMovie({int movieId}) async {
+  Future<ResponseHolder<Movie>> getMovie({int movieId = 0}) async {
     try {
       final response = await apiService.getMovie(id: movieId);
 

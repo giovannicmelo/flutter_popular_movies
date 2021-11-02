@@ -14,10 +14,10 @@ class Popular {
   List<Movie> results;
 
   Popular({
-    this.page,
-    this.totalResults,
-    this.totalPages,
-    this.results,
+    this.page = 0,
+    this.totalResults = 0,
+    this.totalPages = 0,
+    this.results = const [],
   });
   factory Popular.fromJson(Map<String, dynamic> json) =>
       _$PopularFromJson(json);

@@ -4,24 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_popular_movies/data/enums/status.dart';
 
+import '../../../configs/colors.dart';
+import '../../../configs/globals.dart';
 import '../../../configs/strings.dart';
 import '../../../data/models/movie.dart';
-import '../../../configs/globals.dart';
-import '../../../configs/colors.dart';
-import '../../../utils/formatters.dart';
 import '../../../di/service_locators.dart';
 import '../../../ui/viewmodels/movies_view_model.dart';
+import '../../../ui/views/components/movie_data_container.dart';
 import '../../../ui/views/components/movie_details_backdrop.dart';
 import '../../../ui/views/components/movie_poster.dart';
-import '../../../ui/views/components/movie_data_container.dart';
 import '../../../ui/views/components/movie_vote_average.dart';
+import '../../../utils/formatters.dart';
 import '../../../utils/hex_color.dart';
 
 class MovieDetailsScreen extends StatefulWidget {
   final Movie movie;
 
   const MovieDetailsScreen({
-    @required this.movie,
+    required this.movie,
   });
 
   @override
@@ -104,7 +104,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
                           child: Text(
                             widget.movie.title,
                             style:
-                                Theme.of(context).textTheme.headline6.copyWith(
+                                Theme.of(context).textTheme.headline6!.copyWith(
                                       color: Colors.black,
                                       fontSize: 18,
                                       fontWeight: FontWeight.w800,
@@ -116,10 +116,11 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
                         SizedBox(height: 3),
                         Text(
                           widget.movie.releaseDate.toYearFormat(),
-                          style: Theme.of(context).textTheme.bodyText2.copyWith(
-                                color: Colors.grey[500],
-                                fontSize: 12,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.bodyText2!.copyWith(
+                                    color: Colors.grey[500],
+                                    fontSize: 12,
+                                  ),
                         ),
                       ],
                     ),
@@ -163,7 +164,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
               SizedBox(height: 12),
               Text(
                 _viewModel.genres,
-                style: Theme.of(context).textTheme.bodyText2.copyWith(
+                style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       color: AppColors.accentColor,
                       fontSize: 12,
                       fontWeight: FontWeight.w800,
@@ -172,7 +173,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
               SizedBox(height: 12),
               Text(
                 Strings.synopsis,
-                style: Theme.of(context).textTheme.headline6.copyWith(
+                style: Theme.of(context).textTheme.headline6!.copyWith(
                       color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
@@ -181,7 +182,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
               SizedBox(height: 6),
               Text(
                 fetchedMovie.overview,
-                style: Theme.of(context).textTheme.bodyText2.copyWith(
+                style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       color: Colors.grey[400],
                       fontSize: 14,
                       height: 1.4,

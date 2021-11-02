@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_popular_movies/data/models/movie.dart';
 import 'package:flutter_popular_movies/ui/views/screens/movie_details_screen.dart';
 import 'package:logging/logging.dart';
 
 import './configs/routes.dart';
-import './configs/theme.dart';
 import './configs/strings.dart';
+import './configs/theme.dart';
 import './di/service_locators.dart';
 
 void main() async {
@@ -32,7 +33,8 @@ class MoviesApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         if (settings.name == Routes.details) {
           return MaterialPageRoute(
-              builder: (ctx) => MovieDetailsScreen(movie: settings.arguments));
+              builder: (ctx) =>
+                  MovieDetailsScreen(movie: settings.arguments as Movie));
         } else
           return null;
       },

@@ -1,14 +1,12 @@
-import 'package:flutter/foundation.dart';
-
 import '../../../data/contracts/genres_data_source.dart';
+import '../../../data/models/genre.dart';
 import '../../../data/source/network/api_service.dart';
 import '../../../data/source/network/response_holder.dart';
-import '../../../data/models/genre.dart';
 
 class GenresRemoteDataSource implements GenresDataSource {
   final ApiService apiService;
 
-  const GenresRemoteDataSource({@required this.apiService});
+  const GenresRemoteDataSource({required this.apiService});
 
   @override
   Future<ResponseHolder<GenresList>> getGenresList() async {

@@ -5,9 +5,9 @@ import 'package:flutter_popular_movies/data/models/genre.dart';
 import 'package:flutter_popular_movies/data/models/movie.dart';
 import 'package:http/io_client.dart' as http;
 
+import './json_to_type_converter.dart';
 import '../../../configs/globals.dart';
 import '../../../data/models/popular.dart';
-import './json_to_type_converter.dart';
 
 part 'api_service.chopper.dart';
 
@@ -26,7 +26,7 @@ abstract class ApiService extends ChopperService {
   @Get(path: '/movie/{id}')
   Future<Response<Movie>> getMovie({
     @Header('Content-Type') String headers = 'application/json',
-    @Path('id') int id,
+    @Path('id') int id = 0,
     @Query('api_key') String apiKey = Globals.API_KEY,
     @Query('language') String locale = 'pt-BR',
   });

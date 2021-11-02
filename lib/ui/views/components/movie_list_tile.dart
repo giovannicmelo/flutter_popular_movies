@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-import '../../../data/models/movie.dart';
 import '../../../configs/colors.dart';
 import '../../../configs/globals.dart';
 import '../../../configs/routes.dart';
+import '../../../data/models/movie.dart';
 import '../../../utils/formatters.dart';
 
 class MovieListTile extends StatelessWidget {
@@ -47,7 +47,7 @@ class MovieListTile extends StatelessWidget {
                 '${movie.title} (${movie.releaseDate.toYearFormat()})',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6
+                    .headline6!
                     .copyWith(color: Colors.white, fontSize: 16),
               ),
             ),
@@ -55,7 +55,7 @@ class MovieListTile extends StatelessWidget {
               '(${movie.originalTitle})',
               style: Theme.of(context)
                   .textTheme
-                  .bodyText2
+                  .bodyText2!
                   .copyWith(color: AppColors.accentColor, fontSize: 12),
             ),
             SizedBox(height: 8),
@@ -63,7 +63,7 @@ class MovieListTile extends StatelessWidget {
               movie.overview,
               style: Theme.of(context)
                   .textTheme
-                  .bodyText2
+                  .bodyText2!
                   .copyWith(color: Colors.white, fontSize: 14),
               maxLines: 4,
               overflow: TextOverflow.ellipsis,

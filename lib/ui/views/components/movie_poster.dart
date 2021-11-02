@@ -6,9 +6,9 @@ class MoviePoster extends StatelessWidget {
   final String heroTag;
 
   const MoviePoster({
-    @required this.child,
-    @required this.height,
-    this.heroTag,
+    required this.child,
+    required this.height,
+    this.heroTag = "",
   });
 
   @override

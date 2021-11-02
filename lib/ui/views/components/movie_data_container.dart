@@ -6,9 +6,9 @@ class MovieDataContainer extends StatelessWidget {
   final EdgeInsetsGeometry margin;
 
   const MovieDataContainer({
-    @required this.width,
-    @required this.height,
-    @required this.margin,
+    required this.width,
+    required this.height,
+    required this.margin,
   });
 
   @override
